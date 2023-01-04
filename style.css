@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1040px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: "Inter-regular";
+}
+
+.navbar {
+  display: flex;
+  flex-direction: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+.navbar__links {
+  width: 42%;
+  display: flex;
+  flex-direction: none;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+.navbar__links--link {
+  color: hsl(236deg, 13%, 42%);
+}
+.navbar__links--link:hover {
+  color: hsl(5deg, 85%, 63%);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: auto;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+.box__first {
+  width: 54%;
+  height: auto;
+  margin: 0 20px 50px 0;
+}
+
+.pic {
+  width: 100%;
+}
+
+.con1 {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: none;
+}
+.con1__text {
+  font-size: 46px;
+  font-weight: 800;
+  color: hsl(240deg, 100%, 5%);
+  width: 40%;
+}
+.con1__texts {
+  font-size: 20px;
+  font-weight: 0;
+  color: none;
+  width: 60%;
+}
+.con1__texts--text1 {
+  font-size: 20px;
+  font-weight: 200;
+  color: hsl(236deg, 13%, 42%);
+}
+.con1__texts--text2 {
+  width: 120px;
+  height: 40px;
+  font-size: 10px;
+  font-weight: 400;
+  color: hsl(36deg, 100%, 99%);
+  background-color: hsl(240deg, 100%, 5%);
+  letter-spacing: 3px;
+  margin-top: 20px;
+}
+.con1__texts--text2:hover {
+  cursor: pointer;
+  background-color: hsl(35deg, 77%, 62%);
+  color: hsl(36deg, 100%, 99%);
+  border: 1px solid hsl(35deg, 77%, 62%);
+}
+
+.con2 {
+  width: 30%;
+  height: 430px;
+  background-color: hsl(240deg, 100%, 5%);
+  margin-left: 20px;
+  padding: 20px;
+}
+.con2__para {
+  font-size: 30px;
+  font-weight: 800;
+  color: hsl(35deg, 77%, 62%);
+  margin-bottom: 25px;
+}
+.con2__info {
+  font-size: 25px;
+  font-weight: 800;
+  color: hsl(36deg, 100%, 99%);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.con2__info:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+.con2__line {
+  width: 100%;
+  height: 1px;
+  background-color: hsl(236deg, 13%, 42%);
+  margin-bottom: 20px;
+}
+.con2__infos {
+  font-size: 18px;
+  font-weight: 200;
+  color: hsl(236deg, 13%, 42%);
+  margin-bottom: 20px;
+}
+
+.boxes {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+.boxes__page {
+  display: flex;
+  flex-direction: row;
+}
+.boxes__pics {
+  margin-right: 20px;
+  width: 110px;
+  height: 140px;
+}
+.boxes__pages {
+  width: 210px;
+  margin-right: 20px;
+}
+.boxes__num {
+  font-size: 35px;
+  font-weight: 800;
+  color: hsl(233deg, 8%, 79%);
+}
+.boxes__data {
+  font-size: 20px;
+  font-weight: 1000;
+  color: hsl(240deg, 100%, 5%);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.boxes__data:hover {
+  color: hsl(5deg, 85%, 63%);
+}
+.boxes__datas {
+  font-size: 18px;
+  font-weight: 400;
+  color: hsl(233deg, 8%, 79%);
+}/*# sourceMappingURL=style.css.map */

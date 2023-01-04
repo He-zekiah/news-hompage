@@ -1,0 +1,167 @@
+$softOrange: hsl(35, 77%, 62%);
+$softRed: hsl(5, 85%, 63%);
+$offWhite: hsl(36, 100%, 99%);
+$grayishBlue: hsl(233, 8%, 79%);
+$darkGrayishBlue: hsl(236, 13%, 42%);
+$veryDarklue: hsl(240, 100%, 5%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin displays($fd, $jc:null, $ai:null) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin boxsize($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin fonts($font-size, $font-weight, $color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+body {
+    max-width: 1040px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    font-family: "Inter-regular";
+}
+
+.navbar {
+    @include displays(none, space-between, center);
+    margin-bottom: 40px;
+    margin-top: 60px;
+    &__links {
+        width: 42%;
+        @include displays(none, space-between, center);
+        list-style-type: none;
+        &--link {
+            color: $darkGrayishBlue;
+        }
+        &--link:hover {
+            color: $softRed;
+            cursor: pointer;
+            font-weight: 800;
+        }
+    }
+}
+
+.content {
+    @include displays(column);
+    @include boxsize(1200px, auto)
+}
+
+.box {
+    @include displays(row);
+    &__first {
+        width: 54%;
+        height: auto;
+        margin: 0 20px 50px 0;
+    }
+}
+
+.pic {
+    width: 100%;
+}
+
+.con1 {
+    margin-bottom: 20px;
+    width: 100%;
+    @include displays(row, space-between, none);
+    &__text {
+        @include fonts(46px, 800, $veryDarklue);
+        width: 40%;
+    }
+    &__texts {
+        @include fonts(20px, 0, none);
+        width: 60%;
+        &--text1 {
+            @include fonts(20px, 200, $darkGrayishBlue);
+        }
+        &--text2 {
+            @include boxsize(120px, 40px);
+            @include fonts(10px, 400, $offWhite);
+            background-color: $veryDarklue;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+        &--text2:hover {
+            cursor: pointer;
+            background-color: $softOrange;
+            color: $offWhite;
+            border: 1px solid $softOrange;
+        }
+    }
+}
+
+.con2 {
+    @include boxsize(30%, 430px);
+    background-color: $veryDarklue;
+    margin-left: 20px;
+    padding: 20px;
+    &__para {
+        @include fonts(30px, 800, $softOrange);
+        margin-bottom: 25px;
+    }
+    &__info {
+        @include fonts(25px, 800, $offWhite);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    &__info:hover {
+        color: $softOrange;
+    }
+    &__line {
+        @include boxsize(100%, 1px);
+        background-color: $darkGrayishBlue;
+        margin-bottom: 20px;
+    } 
+    &__infos {
+        @include fonts(18px, 200, $darkGrayishBlue);
+        margin-bottom: 20px;
+    }
+}
+
+.boxes {
+    @include boxsize(100%, auto);
+    @include displays(row);
+    &__page {
+        @include displays(row);
+    }
+    &__pics {
+        margin-right: 20px;
+        @include boxsize(110px, 140px);
+    }
+    &__pages {
+        width: 210px;
+        margin-right: 20px;
+    }
+    &__num {
+        @include fonts(35px, 800, $grayishBlue);
+    } 
+    &__data {
+        @include fonts(20px, 1000, $veryDarklue);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    &__data:hover {
+        color: $softRed
+    }
+    &__datas {
+        @include fonts(18px, 400, $grayishBlue);
+    }
+}
+
+
+
+
