@@ -3,7 +3,7 @@ $softRed: hsl(5, 85%, 63%);
 $offWhite: hsl(36, 100%, 99%);
 $grayishBlue: hsl(233, 8%, 79%);
 $darkGrayishBlue: hsl(236, 13%, 42%);
-$veryDarklue: hsl(240, 100%, 5%);
+$veryDarkBlue: hsl(240, 100%, 5%);
 
 * {
     margin: 0;
@@ -11,7 +11,7 @@ $veryDarklue: hsl(240, 100%, 5%);
     box-sizing: border-box;
 }
 
-@mixin displays($fd, $jc:null, $ai:null) {
+@mixin displays($fd, $jc: null, $ai: null) {
     display: flex;
     flex-direction: $fd;
     justify-content: $jc;
@@ -42,23 +42,25 @@ body {
     margin-bottom: 40px;
     margin-top: 60px;
     &__links {
-        width: 42%;
+        width: 42.5%;
         @include displays(none, space-between, center);
         list-style-type: none;
         &--link {
             color: $darkGrayishBlue;
         }
         &--link:hover {
-            color: $softRed;
             cursor: pointer;
-            font-weight: 800;
+            @include fonts(18px, 800, $softRed);
         }
+    }
+    &__menu {
+        display: none;
     }
 }
 
 .content {
     @include displays(column);
-    @include boxsize(1200px, auto)
+    @include boxsize(1200px, auto);
 }
 
 .box {
@@ -68,30 +70,33 @@ body {
         height: auto;
         margin: 0 20px 50px 0;
     }
-}
-
-.pic {
-    width: 100%;
+    &__pic {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    &__pics {
+        display: none;
+    }
 }
 
 .con1 {
-    margin-bottom: 20px;
     width: 100%;
-    @include displays(row, space-between, none);
+    @include displays(row, space-between, center);
     &__text {
-        @include fonts(46px, 800, $veryDarklue);
-        width: 40%;
+        @include fonts(49px, 800, $veryDarkBlue);
+        width: 45%;
+        line-height: 48px;
     }
     &__texts {
         @include fonts(20px, 0, none);
-        width: 60%;
+        width: 47%;
         &--text1 {
-            @include fonts(20px, 200, $darkGrayishBlue);
+            @include fonts(16px, 200, $darkGrayishBlue);
         }
         &--text2 {
-            @include boxsize(120px, 40px);
+            @include boxsize(160px, 40px);
             @include fonts(10px, 400, $offWhite);
-            background-color: $veryDarklue;
+            background-color: $veryDarkBlue;
             letter-spacing: 3px;
             margin-top: 20px;
         }
@@ -105,12 +110,12 @@ body {
 }
 
 .con2 {
-    @include boxsize(30%, 430px);
-    background-color: $veryDarklue;
+    @include boxsize(29.5%, 430px);
+    background-color: $veryDarkBlue;
     margin-left: 20px;
-    padding: 20px;
+    padding: 15px;
     &__para {
-        @include fonts(30px, 800, $softOrange);
+        @include fonts(38px, 800, $softOrange);
         margin-bottom: 25px;
     }
     &__info {
@@ -125,7 +130,7 @@ body {
         @include boxsize(100%, 1px);
         background-color: $darkGrayishBlue;
         margin-bottom: 20px;
-    } 
+    }
     &__infos {
         @include fonts(18px, 200, $darkGrayishBlue);
         margin-bottom: 20px;
@@ -139,29 +144,192 @@ body {
         @include displays(row);
     }
     &__pics {
-        margin-right: 20px;
-        @include boxsize(110px, 140px);
+        margin-right: 21px;
+        @include boxsize(110px, 120px);
     }
     &__pages {
-        width: 210px;
+        width: 195px;
         margin-right: 20px;
     }
     &__num {
-        @include fonts(35px, 800, $grayishBlue);
-    } 
+        @include fonts(25px, 800, $grayishBlue);
+        margin-bottom: 15px;
+    }
     &__data {
-        @include fonts(20px, 1000, $veryDarklue);
-        margin-bottom: 10px;
+        @include fonts(18px, 800, $darkGrayishBlue);
+        margin-bottom: 15px;
         cursor: pointer;
     }
     &__data:hover {
-        color: $softRed
+        color: $softRed;
     }
     &__datas {
-        @include fonts(18px, 400, $grayishBlue);
+        @include fonts(15px, 400, $darkGrayishBlue);
     }
 }
+.next {
+    display: none;
+}
 
+@media screen and (max-width: 1104px) {
+    body {
+        position: relative;
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        @include displays(column, center, center);
+    }
 
+    .navbar {
+        margin-top: 0;
+        width: 100%;
+        @include displays(row, space-between, center);
+        &__links {
+            display: none;
+        }
+        &__menu {
+            display: flex;
+        }
+    }
 
+    .content {
+        width: 100%;
+    }
 
+    .box {
+        @include displays(column);
+        &__first {
+            width: 100%;
+        }
+        &__pic {
+            display: none;
+        }
+        &__pics {
+            display: flex;
+            width: 100%;
+            height: 250px;
+            margin-bottom: 20px;
+        }
+    }
+    .con1 {
+        width: 100%;
+        @include displays(column, flex-start, left);
+        &__text {
+            @include fonts(55px, 800, $veryDarkBlue);
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &__texts {
+            width: 100%;
+            &--text1 {
+                @include fonts(22px, 200, $darkGrayishBlue);
+            }
+            &--text2 {
+                @include boxsize(160px, 40px);
+                @include fonts(10px, 400, $offWhite);
+                background-color: $softRed;
+                border: 1px solid $softRed;
+                letter-spacing: 3px;
+                margin-top: 20px;
+            }
+            &--text2:hover {
+                cursor: pointer;
+                background-color: $veryDarkBlue;
+                color: $offWhite;
+                border: 1px solid $veryDarkBlue;
+            }
+        }
+    }
+    .con2 {
+        @include boxsize(100%, 430px);
+        background-color: $veryDarkBlue;
+        margin-left: 0px;
+        margin-bottom: 20px;
+        padding: 20px;
+        &__para {
+            @include fonts(30px, 800, $softOrange);
+            margin-bottom: 25px;
+        }
+        &__info {
+            @include fonts(25px, 800, $offWhite);
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        &__infos {
+            @include fonts(19px, 200, $darkGrayishBlue);
+            margin-bottom: 20px;
+        }
+    }
+    .boxes {
+        @include boxsize(100%, auto);
+        @include displays(column);
+        margin-bottom: 50px;
+        &__page {
+            @include displays(row);
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        &__pics {
+            margin-right: 21px;
+            @include boxsize(110px, 120px);
+        }
+        &__pages {
+            width: 100%;
+            margin-right: 20px;
+        }
+        &__num {
+            @include fonts(25px, 800, $grayishBlue);
+            margin-bottom: 15px;
+        }
+        &__data {
+            @include fonts(23px, 800, $veryDarkBlue);
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        &__data:hover {
+            color: $softRed;
+        }
+        &__datas {
+            @include fonts(20px, 400, $darkGrayishBlue);
+        }
+    }
+    .next {
+        @include displays(column, flex-end, flex-end);
+        background-color: hsla(0, 0%, 8%, 0.5);
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 0;
+        overflow-x: hidden;
+        transition: all 0.5s ease-in-out;
+        &__con {
+            @include displays(column, flex-end, flex-end);
+            height: 100%;
+            width: 60%;
+            padding: 20px;
+            background-color: hsl(0, 0%, 100%);
+        }
+        &__close {
+            margin-top: 10px;
+            margin-bottom: 60px;
+            @include boxsize(32px, 32px);
+            cursor: pointer;
+        }
+        &__click {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            @include displays(column, flex-start, flex-start);
+            &--clicks {
+                @include fonts(25px, 200, $veryDarkBlue);
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .open {
+        width: 100%;
+    }
+}
